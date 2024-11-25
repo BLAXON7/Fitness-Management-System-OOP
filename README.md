@@ -1,3 +1,2 @@
-# PROJECTS-CPP
-
-Hello Everyone! These are my projects as i continue my studies in Bscs.....These are the projects that i made as my course final projects and maybe future fun projects too 👀
+# Fitness Program
+Hello Everyone! This is my oop fitness program (dont forget to add _crt_secure_no_warnings in the preprocessor of project properties 👀
