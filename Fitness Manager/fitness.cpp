@@ -1,3 +1,5 @@
+#include "Ascii.h"
+#include "string"
 #include<iostream>
 #include<iomanip>
 #include<string>
@@ -8,6 +10,9 @@
 #include<stdio.h>
 #include<fstream>
 using namespace std;
+using namespace ascii;
+Ascii font = Ascii(amongus);
+
 class User
 {
 public:
@@ -41,8 +46,10 @@ public:
 	{
 		int Choice;
 		system("CLS");
-		this_thread::sleep_for(chrono::milliseconds(500));
-		cout << setw(95) << "+_+_+_INFORMATION PORTAL_+_+_+" << endl << endl;
+		Ascii font = Ascii(amongus);
+		font.print("INFOPORTAL");
+		cout << endl;
+		//cout << setw(95) << "+_+_+_INFORMATION PORTAL_+_+_+" << endl << endl;
 		cout << "PERSONAL DETAILS: " << endl;
 		cout << obj;
 		cout << "Enter 1 to return to menu: ";
@@ -136,7 +143,8 @@ public:
 	void LoginDisplay()
 	{
 		int Choice;
-		cout << setw(95) << "++WELCOME TO THE FITNESS APP++" << endl;
+		Ascii font = Ascii(amongus);
+		font.print("FITNESSAPP");
 		cout << endl << endl << "1.LOGIN INTO EXISTING ACCOUNT." << endl;
 		cout << "2.ADD ACCOUNT" << endl;
 		cout << "3.EXIT" << endl;
@@ -209,7 +217,7 @@ public:
 				file.close();
 				return;
 			}
-			for (int i = 0; i < 6; i++) { //read 6 times to skip the unecessary information
+			for (int i = 0; i < 6; i++) {
 				getline(file, temp);
 			}
 
@@ -251,7 +259,10 @@ public:
 		{
 			system("CLS");
 
-			cout << setw(95) << "+_+_+_INFORMATION UPDATER_+_+_+" << endl << endl;
+			//cout << setw(95) << "+_+_+_INFORMATION UPDATER_+_+_+" << endl << endl;
+			Ascii font = Ascii(amongus);
+			font.print("INFOUPDATER");
+			cout << endl;
 			cout << "1: UPDATE PASSWORD\n";
 			cout << "2: UPDATE AGE\n";
 			cout << "3: UPDATE WEIGHT\n";
@@ -349,9 +360,11 @@ public:
 	void DisplayProgress()
 	{
 		system("CLS");
-		this_thread::sleep_for(chrono::milliseconds(500));
-		cout << setw(90) << "_+_+_+_PROGRESS_+_+_+_" << endl << endl << endl << endl;
+		Ascii font = Ascii(amongus);
+		font.print("PROGRESS");
+		//cout << setw(90) << "_+_+_+_PROGRESS_+_+_+_" << endl << endl << endl << endl;
 		int Choice;
+		cout << endl;
 		cout << "Your level is: " << level << endl;
 		cout << "Your progress is: ";
 		cout << "[ ";
@@ -428,8 +441,10 @@ public:
 		while (Choice != 9)
 		{
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_WORKOUTS_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			font.print("WORKOUTS");
+			cout << endl;
+			/*cout << setw(90) << "_+_+_+_WORKOUTS_+_+_+_" << endl << endl << endl << endl;*/
 			cout << "1.  Planks" << endl;
 			cout << "2.  Pushups" << endl;
 			cout << "3.  Crunches" << endl;
@@ -450,8 +465,9 @@ public:
 			{
 
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(90) << "_+_+_+_PLANKS_+_+_+_" << endl << endl << endl << endl;
+				Ascii font = Ascii(amongus);
+				font.print("PLANKS");
+				//cout << setw(90) << "_+_+_+_PLANKS_+_+_+_" << endl << endl << endl << endl;
 				cout << endl;
 				cout << "-> Select a position where you can extend your whole body length." << endl <<
 					"-> Using an exercise mat will give you enough padding to be " <<
@@ -493,8 +509,9 @@ public:
 			else if (Choice == 2)
 			{
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(90) << "_+_+_+_Pushups_+_+_+_" << endl << endl << endl << endl;
+				Ascii font = Ascii(amongus);
+				font.print("PUSHUPS");
+				//cout << setw(90) << "_+_+_+_Pushups_+_+_+_" << endl << endl << endl << endl;
 				cout << endl;
 				cout << "-> To do a push-up you are going to get on the floor on all fours" << endl <<
 					"-> position your hands slightly wider than your shoulders. ";
@@ -532,8 +549,10 @@ public:
 			else if (Choice == 3)
 			{
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(90) << "_+_+_+_Crunches_+_+_+_" << endl << endl << endl << endl;
+				Ascii font = Ascii(amongus);
+				font.print("CRUNCHES");
+				//cout << setw(90) << "_+_+_+_Crunches_+_+_+_" << endl << endl << endl << endl;
+				cout << endl;
 				cout << "-> Lie down on the floor on your back and bend your knees. " << endl;
 				cout << "-> place your hands behind your head or across your chest. " << endl;
 				cout << "-> Some people find that crossing the arms over the chest helps them avoid pulling on the neck. " << endl;
@@ -571,8 +590,11 @@ public:
 			else if (Choice == 4)
 			{
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(90) << "_+_+_+_Squats_+_+_+_" << endl << endl << endl << endl;
+				Ascii font = Ascii(amongus);
+				font.print("SQUATS");
+				//cout << setw(90) << "_+_+_+_Squats_+_+_+_" << endl << endl << endl << endl;
+				cout << endl;
+
 				cout << "-> Stand with feet about hip or shoulder-width apart. " << endl;
 				cout << "-> If using a chair, place it behind you and stand in front of it. Tighten your abs" << endl;
 				cout << "-> Bend the knees and slowly squat towards the chair. " << endl;
@@ -580,7 +602,7 @@ public:
 				cout << "-> Pause here, or sit briefly on the chair." << endl;
 				cout << "-> Then contract the glutes to lift up out of the chair and begin extending the legs." << endl;
 				cout << "-> Extend the legs fully until you're back to standing position, but don't lock the knees." << endl;
-				cout << "-> Repeat this for 1–3 sets of 10–16 repetitions." << endl;
+				cout << "-> Repeat this for 1�3 sets of 10�16 repetitions." << endl;
 				cout << endl;
 				cout << endl << "1.START TIMER \n2.GO BACK \n\n" << "Enter your choice: ";
 				int option;
@@ -610,8 +632,10 @@ public:
 			else if (Choice == 5)
 			{
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(90) << "_+_+_+_PullUps_+_+_+_" << endl << endl << endl << endl;
+				Ascii font = Ascii(amongus);
+				font.print("PULLUPS");
+				//cout << setw(90) << "_+_+_+_PullUps_+_+_+_" << endl << endl << endl << endl;
+				cout << endl;
 				cout << "-> Stand below the bar with your feet shoulder width apart. " << endl;
 				cout << "-> Jump up and grip the bar with an overhand grip about shoulder width apart." << endl;
 				cout << "-> Fully extend your arms so you are in a dead hang." << endl;
@@ -648,8 +672,10 @@ public:
 			else if (Choice == 6)
 			{
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(87) << "_+_+_+_Jumping Jacks (with step)_+_+_+_" << endl << endl << endl << endl;
+				Ascii font = Ascii(amongus);
+				font.print("JumpJacks");
+				//cout << setw(87) << "_+_+_+_Jumping Jacks (with step)_+_+_+_" << endl << endl << endl << endl;
+				cout << endl;
 				cout << "-> You may want to start with the step at its lowest position if you're trying it for the first time. " << endl;
 				cout << "-> If you feel discomfort or pain, avoid this exercise." << endl;
 				cout << "-> Stand facing a step or platform and jump up onto it with both feet." << endl;
@@ -684,10 +710,12 @@ public:
 			else if (Choice == 7)
 			{
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(90) << "_+_+_+_Mountain climbers_+_+_+_" << endl << endl << endl << endl;
+				Ascii font = Ascii(amongus);
+				font.print("CLIMBERS");
+				//cout << setw(90) << "_+_+_+_Mountain climbers_+_+_+_" << endl << endl << endl << endl;
+				cout << endl;
 				cout << "-> Get into a plank position, making sure to distribute your weight evenly between your hands and your toes. " << endl;
-				cout << "-> Check your form—your hands should be about shoulder-width apart, back flat, abs engaged, and head in alignment." << endl;
+				cout << "-> Check your form�your hands should be about shoulder-width apart, back flat, abs engaged, and head in alignment." << endl;
 				cout << "-> Pull your right knee into your chest as far as you can." << endl;
 				cout << "-> Switch legs, pulling one knee out and bringing the other knee in." << endl;
 				cout << "-> Keep your hips down and run your knees in and out as far and as fast as you can." << endl;
@@ -721,10 +749,10 @@ public:
 			else if (Choice == 8)
 			{
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(90) << "_+_+_+_Side Planks_+_+_+_" << endl << endl << endl << endl;
-				cout << setw(90) << "_+_+_+_Mountain climbers_+_+_+_" << endl << endl << endl << endl;
-				cout << "-> Lie on your right side, legs extended and stacked from hip to feet. The elbow of your right arm is directly under your shoulder. " << endl;
+				Ascii font = Ascii(amongus);
+				font.print("SIDEPLANKS");
+				//cout << setw(90) << "_+_+_+_Side Planks_+_+_+_" << endl << endl << endl << endl;
+				cout << endl;
 				cout << "-> Ensure your head is directly in line with your spine. Your left arm can be aligned along the left side of your body." << endl;
 				cout << "-> Engage your abdominal muscles, drawing your navel toward your spine." << endl;
 				cout << "-> Lift your hips and knees from the mat while exhaling. Your torso is straight in line with no sagging or bending. Hold the position." << endl;
@@ -765,7 +793,6 @@ public:
 	void doExercise(int index, int& lvl, int& s)
 	{
 		system("CLS");
-		this_thread::sleep_for(chrono::milliseconds(500));
 		cout << "You are doing exercise " << exercises[index] << endl;
 		//change based on userInfo or the exercise itself
 		int durationInSeconds = 5;
@@ -796,11 +823,14 @@ public:
 		lvl = level;
 		s = size;
 	}
-	void cutomizeexcercise(int &l,int &s)
+	void cutomizeexcercise(int& l, int& s)
 	{
 		system("CLS");
-		int size,size1,choice;
-		cout << setw(90) << "_+_+_+_CUSTOMIZE MENU_+_+_+_" << endl << endl << endl << endl;
+		int size, size1, choice;
+		Ascii font = Ascii(amongus);
+		font.print("CUSTOMIZER");
+		cout << endl;
+		//cout << setw(90) << "_+_+_+_CUSTOMIZE MENU_+_+_+_" << endl << endl << endl << endl;
 		cout << "1.Customize\n2.Back to menu\n ";
 		cout << "Enter your choice: ";
 		cin >> choice;
@@ -819,8 +849,10 @@ public:
 			for (int i = 0; i < size; i++)
 			{
 				system("CLS");
-				this_thread::sleep_for(chrono::milliseconds(500));
-				cout << setw(90) << "_+_+_+_CUSTOMIZE YOUR WORKOUT_+_+_+_" << endl << endl << endl << endl;
+				Ascii font = Ascii(amongus);
+				font.print("CUSTOMIZE");
+				cout << endl;
+				//cout << setw(90) << "_+_+_+_CUSTOMIZE YOUR WORKOUT_+_+_+_" << endl << endl << endl << endl;
 				cout << "0.  Planks" << endl;
 				cout << "1.  Pushups" << endl;
 				cout << "2.  Crunches" << endl;
@@ -858,8 +890,10 @@ public:
 	void bonusachievements(int level)
 	{
 		system("CLS");
-		this_thread::sleep_for(chrono::milliseconds(500));
-		cout << setw(90) << "_+_+_+_BONUS ACHIEVEMENTS_+_+_+_" << endl << endl << endl << endl;
+		Ascii font = Ascii(amongus);
+		font.print("BONUS");
+		cout << endl;
+		//cout << setw(90) << "_+_+_+_BONUS ACHIEVEMENTS_+_+_+_" << endl << endl << endl << endl;
 		string arr[10];
 		arr[0] = "Fit Fusion:Level 1";
 		arr[1] = "Sweat Squad:Level 2";
@@ -874,9 +908,9 @@ public:
 		cout << "UNLOCKED ACHIEVEMENTS!\n";
 		for (int i = 0; i < level; i++)
 		{
-			cout << "-> " << arr[i]<<endl;
+			cout << "-> " << arr[i] << endl;
 		}
-		cout <<endl<<endl<< "LOCKED ACHIEVEMENTS!\n";
+		cout << endl << endl << "LOCKED ACHIEVEMENTS!\n";
 		for (int i = level; i <= 9; i++)
 		{
 			cout << "-> " << arr[i] << endl;
@@ -890,11 +924,11 @@ public:
 		SetConsoleTextAttribute(console_color, 11);
 		int index;
 		srand(time(NULL));
-	    index=rand() % 10 + 1;
+		index = rand() % 10 + 1;
 		cout << "MOTIVATION OF THE DAY!" << endl;
 		if (index == 1)
 		{
-			cout << """You are never too old to set another goal or to dream a new dream."" - C.S. Lewis" << endl<<endl;
+			cout << """You are never too old to set another goal or to dream a new dream.""C.S.�Lewis" << endl << endl;
 		}
 		else if (index == 2)
 		{
@@ -902,11 +936,11 @@ public:
 		}
 		else if (index == 3)
 		{
-			cout<<"It's not about perfect. It's about effort. And when you bring that effort every single day,\nthat's where transformation happens. That's how change occurs."" - Jillian Michaels"<<endl<<endl;
+			cout << "It's not about perfect. It's about effort. And when you bring that effort every single day,\nthat's where transformation happens. That's how change occurs."" - Jillian Michaels" << endl << endl;
 		}
 		else if (index == 4)
 		{
-			cout<<"You miss 100 % of the shots you don't take."" - Wayne Gretzky"<<endl<<endl;
+			cout << "You miss 100 % of the shots you don't take."" - Wayne Gretzky" << endl << endl;
 		}
 		else if (index == 5)
 		{
@@ -914,7 +948,7 @@ public:
 		}
 		else if (index == 6)
 		{
-			cout << """When life gives you lemons, make lemonade.When it gives you weights, lift them."""<<endl<<endl;
+			cout << """When life gives you lemons, make lemonade.When it gives you weights, lift them.""" << endl << endl;
 		}
 		else if (index == 7)
 		{
@@ -933,7 +967,7 @@ public:
 			cout << """The future belongs to those who believe in the beauty of their dreams."" - Eleanor Roosevelt" << endl << endl;
 		}
 		console_color = GetStdHandle(STD_OUTPUT_HANDLE);
-		SetConsoleTextAttribute(console_color, 15);
+		SetConsoleTextAttribute(console_color, 14);
 	}
 };
 class DietRecipes
@@ -942,12 +976,15 @@ public:
 	void recipeBreakfast(int i) {
 		if (i == 1) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "olive oil\n2 cups spinach\n6 grape tomatoes\n"
 				<< "2 large eggs\n1 tablespoon water\nsalt and pepper, to taste\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
-			cout << "\n1.Drizzle olive oil into a nonstick skillet over medium heat.\n"
+			font1.print("INSTRUCTIONS");
+			cout << endl;				cout << "\n1.Drizzle olive oil into a nonstick skillet over medium heat.\n"
 				<< " Add spinach and tomatoes and cook until the spinach just begins to wilt.\n"
 				<< " Meanwhile, whisk together eggs and water until foamy. Pour eggs into skillet with spinach.\n";
 			cout << "\n2.Do not stir the eggs until the sides have begun to turn a lighter shade than the rest of\n";
@@ -964,10 +1001,11 @@ public:
 		}
 		else if (i == 2) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 cup Greek yogurt\n1/2 cup mixed berries\n1/4 cup almonds\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
 			cout << "\n1.one cup plain Greek yogurt\n"
 				<< "2.one packet Truvia or other stevia-based sweetener\n"
 				<< "3.one handful raw or dry-roasted almonds\n"
@@ -979,12 +1017,15 @@ public:
 		}
 		else if (i == 3) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1/2 cup rolled oats\n1 cup water\n1 tablespoon chia seeds"
 				<< "\n1/2 banana, sliced\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
-			cout << "\n1.Combine oats and water in a microwave-safe bowl.\n"
+			font1.print("INSTRUCTIONS");
+			cout << endl;					cout << "\n1.Combine oats and water in a microwave-safe bowl.\n"
 				<< "2.Microwave on high for 2 minutes.\n"
 				<< "3.Stir in chia seeds and banana slices.\n"
 				<< "4.Let sit for 5 minutes before eating." << endl;
@@ -994,11 +1035,14 @@ public:
 		}
 		else if (i == 4) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1/2 avocado\n1 slice whole grain bread\nsalt and pepper, to taste\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
-			cout << "\n1.Toast whole grain bread until golden brown.\n"
+			font1.print("INSTRUCTIONS");
+			cout << endl;					cout << "\n1.Toast whole grain bread until golden brown.\n"
 				<< "2.Mash avocado and spread on toast.\n"
 				<< "3.Season with salt and pepper to taste." << endl;
 			int choice;
@@ -1007,10 +1051,14 @@ public:
 		}
 		else if (i == 5) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 cup kale\n1/2 banana\n1 scoop protein powder\n1 cup water\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
+			font1.print("INSTRUCTIONS");
+			cout << endl;
 			cout << "\n1.Combine kale, banana, protein powder, and water in a blender.\n"
 				<< "2.Blend until smooth.\n"
 				<< "3.Serve immediately." << endl;
@@ -1020,7 +1068,6 @@ public:
 		}
 		else {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
 			cout << "\nRecipie not found\n";
 			int choice;
 			cout << "Enter any number to go back: ";
@@ -1030,10 +1077,14 @@ public:
 	void recipeLunch(int i) {
 		if (i == 1) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 cup quinoa\n1 cup mixed vegetables\n1/4 cup tahini\n1 lemon\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
+			font1.print("INSTRUCTIONS");
+			cout << endl;
 			cout << "\n1.Cook quinoa according to package instructions.\n"
 				<< "2.Steam mixed vegetables until tender.\n"
 				<< "3.Whisk together tahini and lemon juice to make dressing.\n"
@@ -1044,10 +1095,14 @@ public:
 		}
 		else if (i == 2) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 chicken breast\n1 cup broccoli\n1/2 cup brown rice\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
+			font1.print("INSTRUCTIONS");
+			cout << endl;
 			cout << "\n1.Grill chicken breast until cooked through.\n"
 				<< "2.Steam broccoli until tender.\n"
 				<< "3.Cook brown rice according to package instructions.\n"
@@ -1058,10 +1113,14 @@ public:
 		}
 		else if (i == 3) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 cup lentils\n1 slice whole grain bread\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
+			font1.print("INSTRUCTIONS");
+			cout << endl;
 			cout << "\n1.Cook lentils according to package instructions.\n"
 				<< "2.Toast whole grain bread until golden brown.\n"
 				<< "3.Serve lentils with toast." << endl;
@@ -1071,10 +1130,14 @@ public:
 		}
 		else if (i == 4) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 can tuna\n1/2 cup lettuce\n1 whole wheat tortilla\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
+			font1.print("INSTRUCTIONS");
+			cout << endl;
 			cout << "\n1.Drain tuna and mix with mayonnaise or Greek yogurt.\n"
 				<< "2.Lay out tortilla and top with tuna mixture and lettuce.\n"
 				<< "3.Roll up tortilla and slice in half." << endl;
@@ -1084,10 +1147,14 @@ public:
 		}
 		else if (i == 4) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 block tofu\n1 cup broccoli\n1/2 cup brown rice\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
+			font1.print("INSTRUCTIONS");
+			cout << endl;
 			cout << "\n1.Cut tofu into cubes and stir-fry until golden brown.\n"
 				<< "2.Steam broccoli until tender.\n"
 				<< "3.Cook brown rice according to package instructions.\n"
@@ -1098,17 +1165,21 @@ public:
 		}
 		else {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
 			cout << "\nRecipie not found\n";
 		}
 	}
 	void recipeDinner(int i) {
 		if (i == 1) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 salmon fillet\n1 cup asparagus\n1/2 cup quinoa\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
+			font1.print("INSTRUCTIONS");
+			cout << endl;
 			cout << "\n1.Bake salmon fillet in the oven until cooked through.\n"
 				<< "2.Steam asparagus until tender.\n"
 				<< "3.Cook quinoa according to package instructions.\n"
@@ -1119,11 +1190,14 @@ public:
 		}
 		else if (i == 2) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 cup mixed vegetables\n1/2 cup whole wheat couscous\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
-			cout << "\n1.Thread mixed vegetables onto skewers and grill until tender.\n"
+			font1.print("INSTRUCTIONS");
+			cout << endl;					cout << "\n1.Thread mixed vegetables onto skewers and grill until tender.\n"
 				<< "2.Cook whole wheat couscous according to package instructions.\n"
 				<< "3.Serve skewers and couscous together." << endl;
 			int choice;
@@ -1132,11 +1206,14 @@ public:
 		}
 		else if (i == 3) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 pound ground turkey\n1 can mixed beans\n1 cup side salad\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
-			cout << "\n1.Brown ground turkey in a skillet.\n"
+			font1.print("INSTRUCTIONS");
+			cout << endl;					cout << "\n1.Brown ground turkey in a skillet.\n"
 				<< "2.Add mixed beans and simmer until heated through.\n"
 				<< "3.Serve turkey chili with side salad." << endl;
 			int choice;
@@ -1145,11 +1222,14 @@ public:
 		}
 		else if (i == 4) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "2 bell peppers\n1 pound lean ground turkey\n1/2 cup brown rice\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
-			cout << "\n1.Cut tops off bell peppers and remove seeds.\n"
+			font1.print("INSTRUCTIONS");
+			cout << endl;					cout << "\n1.Cut tops off bell peppers and remove seeds.\n"
 				<< "2.Stuff peppers with cooked ground turkey and brown rice.\n"
 				<< "3.Bake in the oven until peppers are tender." << endl;
 			int choice;
@@ -1158,11 +1238,14 @@ public:
 		}
 		else if (i == 5) {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			Ascii font1 = Ascii(amongus);
+			font.print("RECIPE");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Ingredients_+_+_+_" << endl << endl << endl << endl;
 			cout << "1 block tofu\n1 cup broccoli\n1/2 cup brown rice noodles\n";
-			cout << endl << endl << endl << setw(90) << "_+_+_+_Instructions_+_+_+_" << endl << endl << endl << endl;
-			cout << "\n1.Cut tofu into cubes and stir-fry until golden brown.\n"
+			font1.print("INSTRUCTIONS");
+			cout << endl;					cout << "\n1.Cut tofu into cubes and stir-fry until golden brown.\n"
 				<< "2.Steam broccoli until tender.\n"
 				<< "3.Cook brown rice noodles according to package instructions.\n"
 				<< "4.Serve tofu, broccoli, and noodles together." << endl;
@@ -1172,7 +1255,6 @@ public:
 		}
 		else {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
 			cout << "\nRecipie not found\n";
 		}
 	}
@@ -1180,8 +1262,10 @@ public:
 		int option;
 		do {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Diet Breakfast Recipes_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			font.print("BREAKFAST");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Diet Breakfast Recipes_+_+_+_" << endl << endl << endl << endl;
 			cout << "1. Scrambled Eggs with Spinach and Tomatoes\n";
 			cout << "2. Greek Yogurt with Berries and Almonds\n";
 			cout << "3. Oatmeal with Chia Seeds and Banana Slices\n";
@@ -1212,8 +1296,10 @@ public:
 		int option;
 		do {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Diet Lunch Recipes_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			font.print("LUNCH");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Diet Lunch Recipes_+_+_+_" << endl << endl << endl << endl;
 			cout << "1. Quinoa Salad with Mixed Vegetables and Lemon-Tahini Dressing\n";
 			cout << "2. Grilled Chicken Breast with Steamed Broccoli and Brown Rice\n";
 			cout << "3. Lentil Soup with Whole Grain Bread\n";
@@ -1243,8 +1329,11 @@ public:
 		int option;
 		do {
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Diet Dinner Recipes_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			font.print("DINNER");
+			cout << endl;
+
+			//cout << setw(90) << "_+_+_+_Diet Dinner Recipes_+_+_+_" << endl << endl << endl << endl;
 			cout << "1. Baked Salmon with Asparagus and Quinoa\n";
 			cout << "2. Grilled Vegetable Skewers with Whole Wheat Couscous\n";
 			cout << "3. Turkey Chili with Mixed Beans and Side Salad\n";
@@ -1275,8 +1364,10 @@ public:
 		while (Choice != 4)
 		{
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Diet Recipes_+_+_+_" << endl << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			font.print("DIETRECIPES");
+			cout << endl;
+			//cout << setw(90) << "_+_+_+_Diet Recipes_+_+_+_" << endl << endl << endl << endl;
 			cout << "1. BREAKFAST RECIPES" << endl;
 			cout << "2. LUNCH RECIPES" << endl;
 			cout << "3. DINNER RECIPES" << endl;
@@ -1314,9 +1405,9 @@ public:
 		while (choice != 0)
 		{
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(90) << "_+_+_+_Water Tracker_+_+_+_" << endl << endl << endl << endl;
-			cout << "Enter the amount of water you drank today: ";
+			Ascii font = Ascii(amongus);
+			font.print("WATERTRACKER");
+			//cout << setw(90) << "_+_+_+_Water Tracker_+_+_+_" << endl << endl << endl << endl;
 			cout << endl << endl << "Recommended Intake: " << waterIntake << " Weight: " << w << endl << endl;
 			while (water <= 0)
 			{
@@ -1347,7 +1438,10 @@ public:
 	{
 		system("CLS");
 		int c;
-		cout << setw(90) << "_+_+_+_BMR TRACKER_+_+_+_" << endl << endl << endl << endl;
+		Ascii font = Ascii(amongus);
+		font.print("BMRTRACKER");
+		cout << endl;
+		//cout << setw(90) << "_+_+_+_BMR TRACKER_+_+_+_" << endl << endl << endl << endl;
 		cout << "1.Male \n2.Female\n\nEnter your choice: ";
 		cin >> c;
 		while (c < 1 || c>2)
@@ -1373,8 +1467,10 @@ public:
 	{
 		float weight, height;
 		system("CLS");
-		this_thread::sleep_for(chrono::milliseconds(500));
-		cout << setw(80) << "_+_+_+_BMI CALCULATOR+_+_+_" << endl << endl << endl << endl;
+		Ascii font = Ascii(amongus);
+		font.print("BMRCALC.");
+		cout << endl;
+		//cout << setw(80) << "_+_+_+_BMI CALCULATOR+_+_+_" << endl << endl << endl << endl;
 		cout << "ENTER YOUR WEIGHT: ";
 		cin >> weight;
 		cout << "ENTER YOUR HEIGHT(in meter): ";
@@ -1405,8 +1501,10 @@ public:
 		int choice;
 		double BMI = weight / (height * height / 10000);
 		system("CLS");
-		this_thread::sleep_for(chrono::milliseconds(500));
-		cout << setw(90) << "_+_+_+_BMI TRACKER+_+_+_" << endl << endl << endl << endl;
+		Ascii font = Ascii(amongus);
+		font.print("BMITRACKER");
+		cout << endl;
+		//cout << setw(90) << "_+_+_+_BMI TRACKER+_+_+_" << endl << endl << endl << endl;
 		cout << endl << endl << "WEIGHT: " << weight << endl << endl << "HEIGHT: " << height << endl << endl << "BMI SCORE: " << BMI << "\t";
 		cout << endl;
 		if (BMI < 18.5)
@@ -1449,8 +1547,10 @@ public:
 		while (Choice != 11)
 		{
 			system("CLS");
-			this_thread::sleep_for(chrono::milliseconds(500));
-			cout << setw(80) << "_+_+_+_MENU_+_+_+_" << endl << endl << endl;
+			Ascii font = Ascii(amongus);
+			font.print("MENU");
+			cout << endl;
+			//cout << setw(80) << "_+_+_+_MENU_+_+_+_" << endl << endl << endl;
 			motivation();
 			cout << "1.  Excercises" << endl;
 			cout << "2.  Diet Recipies" << endl;
@@ -1473,8 +1573,11 @@ public:
 			{
 				int choices;
 				system("CLS");
-				cout << setw(80) << "_+_+_+_EXCERCISE MENU_+_+_+_" << endl << endl << endl << endl;
-				cout << "1.Customize a plan and run it!\n2.Manual Excercise\n3.Back to Menu"<<endl;
+				Ascii font = Ascii(amongus);
+				font.print("EXCERCISE");
+				cout << endl;
+				//cout << setw(80) << "_+_+_+_EXCERCISE MENU_+_+_+_" << endl << endl << endl << endl;
+				cout << "1.Customize a plan and run it!\n2.Manual Excercise\n3.Back to Menu" << endl;
 				cout << "Choose your choice: ";
 				cin >> choices;
 				while (choices > 3 || choices < 1)
@@ -1484,7 +1587,7 @@ public:
 				}
 				if (choices == 1)
 				{
-					cutomizeexcercise(level,size);
+					cutomizeexcercise(level, size);
 				}
 				else if (choices == 2)
 				{
@@ -1506,7 +1609,10 @@ public:
 				while (c != 4)
 				{
 					system("CLS");
-					cout << setw(80) << "_+_+_+_BMI TRACKER AND CALCULATOR_+_+_+_" << endl << endl << endl << endl;
+					Ascii font = Ascii(amongus);
+					font.print("BMIMENU");
+					cout << endl;
+					//cout << setw(80) << "_+_+_+_BMI TRACKER AND CALCULATOR_+_+_+_" << endl << endl << endl << endl;
 					cout << "1.  BMI TRACKER(YOUR ACCOUNT)" << endl;
 					cout << "2.  BMI CALCULATOR" << endl;
 					cout << "3.  BACK TO MENU" << endl << endl;
@@ -1553,14 +1659,13 @@ public:
 			{
 				int temp;
 				bonusachievements(level);
-				cout << "Enter any number to go back";
+				cout << "Enter any number to go back: ";
 				cin >> temp;
 			}
 			else
 			{
 				system("CLS");
 				addProgress();
-				this_thread::sleep_for(chrono::milliseconds(500));
 				LoginDisplay();
 			}
 		}
@@ -1628,13 +1733,11 @@ public:
 };
 int main()
 {
-	::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
+	//::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 900);
 	HANDLE console_color;
 	console_color = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(console_color, 15);
+	SetConsoleTextAttribute(console_color, 14);
 	Menu app;
 	app.Display();
 	return 0;
 }
-
-
